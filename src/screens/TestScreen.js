@@ -5,10 +5,11 @@ import "../App.css";
 
 function TestScreen({ questions, answers, setAnswers }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
   if (questions.length === 0) {
-    navigate("/", { replace: true }); // redirect to home if no questions
+    navigate("/", { replace: true });
     return null;
   }
 
@@ -25,12 +26,33 @@ function TestScreen({ questions, answers, setAnswers }) {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
-      navigate("/summary");
+      handleFinish();
     }
   };
 
   const handlePrevious = () => {
     if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
+  };
+
+  const handleFinish = () => {
+    const unattempted = questions.some(
+      (q) => !answers.hasOwnProperty(q.serial)
+    );
+
+    if (unattempted) {
+      setShowModal(true);
+    } else {
+      navigate("/summary", { replace: true });
+    }
+  };
+
+  const confirmFinish = () => {
+    setShowModal(false);
+    navigate("/summary", { replace: true });
+  };
+
+  const cancelFinish = () => {
+    setShowModal(false);
   };
 
   return (
@@ -54,6 +76,20 @@ function TestScreen({ questions, answers, setAnswers }) {
           </button>
         </div>
       </div>
+
+      {/* Confirmation Modal */}
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h3>Unattempted Questions</h3>
+            <p>You still have unattempted questions. Are you sure you want to finish?</p>
+            <div className="modal-buttons">
+              <button onClick={confirmFinish}>Yes, Finish</button>
+              <button onClick={cancelFinish}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
