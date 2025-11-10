@@ -225,6 +225,21 @@ button:disabled {
   background-color: #1c3259;
 }
 
+.back-to-home-button {
+  background-color: #0b2d51; 
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.back-to-home-button:hover:not(:disabled) {
+  background-color: #1c3259;
+}
+
 .modal-overlay {
   position: absolute;
   top: 0;
@@ -271,4 +286,18 @@ button:disabled {
 
 .modal-buttons button:last-child {
   background: #881513;
+}
+
+.circular-chart {
+  display: block;
+  margin: 20px auto;
+  transform: rotate(-90deg); /* start progress from top */
+}
+
+.circle-bg {
+  transition: stroke-dashoffset 0.5s linear;
+}
+
+.circle-progress {
+  transition: stroke-dashoffset 0.3s linear;
 }
