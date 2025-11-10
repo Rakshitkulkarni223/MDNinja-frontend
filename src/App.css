@@ -91,7 +91,7 @@ button:disabled {
   flex: 1;
   background: #fff;
   border-radius: 20px;
-  padding: 15px;
+  padding: 5px;
   /* margin-top: 20px; */
   display: flex;
   flex-direction: column;

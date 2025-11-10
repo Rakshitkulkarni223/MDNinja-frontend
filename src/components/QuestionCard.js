@@ -24,7 +24,8 @@ function QuestionCard({ q, selected, onSelect }) {
               className={`option 
                 ${isSelected ? "selected" : ""} 
                 ${isCorrect && selected ? "correct" : ""} 
-                ${isWrong ? "wrong" : ""}`}
+                ${isWrong ? "wrong" : ""} 
+                ${selected ? "disabled" : ""}`} // add disabled class
               onClick={() => handleSelect(key)}
             >
               <span className="option-key">{key})</span> {val}
