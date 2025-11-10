@@ -8,7 +8,7 @@ function TestScreen({ questions, answers, setAnswers }) {
   const navigate = useNavigate();
 
   if (questions.length === 0) {
-    navigate("/"); // redirect to home if no questions
+    navigate("/", { replace: true }); // redirect to home if no questions
     return null;
   }
 

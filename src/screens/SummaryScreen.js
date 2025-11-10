@@ -9,7 +9,7 @@ function SummaryScreen({ questions, answers, setAnswers, setTopic, setQuestions 
     setAnswers({});
     setTopic("");
     setQuestions([]);
-    navigate("/");
+    navigate("/", { replace: true });
   };
 
   return (

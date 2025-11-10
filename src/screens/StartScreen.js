@@ -31,7 +31,7 @@ function StartScreen({ topic, setTopic, setQuestions, setAnswers }) {
       if (!data.success) throw new Error(data.error || "Failed to generate questions.");
 
       setQuestions(data.data.questions || []);
-      navigate("/test"); // go to test screen
+      navigate("/test", { replace: true });
     } catch (err) {
       setError(err.message);
     } finally {
