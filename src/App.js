@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <div className="app-frame">
-        <div className="header">🧠 MD NEET-PG Test</div>
+        <div className="header">MDNinja</div>
         <div className="screen">
           <Routes>
             <Route

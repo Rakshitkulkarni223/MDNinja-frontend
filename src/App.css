@@ -22,6 +22,7 @@
   background: #ffffff;
   flex-direction: column;
   overflow-y: auto;
+  padding-bottom: 65px; /* <-- enough space for navigation */
 }
 
 /* === Header === */
@@ -31,8 +32,10 @@
   font-weight: 600;
   padding: 10px 0;
   border-bottom: 1px solid #e2e8f0;
-  background: #fff;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77); /* dark navy → slate blue */
+  color: #ffffff; /* white text for contrast */
   flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
 /* === Input / dropdown === */
@@ -120,33 +123,6 @@ button:disabled {
   background: #eef2ff;
 }
 
-/* === Navigation === */
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  margin-top: auto;
-}
-
-.navigation button {
-  flex: 1;
-  /* padding: 10px; */
-  font-weight: 600;
-  border-radius: 12px;
-  border: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.navigation span {
-  flex: 1;
-  text-align: center;
-  font-weight: 500;
-  background: #eef2ff;
-  padding: 8px 0;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
 
 /* === Summary Screen === */
 .summary {
@@ -172,4 +148,64 @@ button:disabled {
 .screen::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
+}
+
+
+/* === Navigation Bar === */
+.navigation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0 0 24px 24px;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+/* Navigation Buttons */
+.navigation button {
+  flex: 1;
+  padding: 8px 0;
+  font-weight: 600;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s ease-in-out;
+}
+
+.navigation button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: translateY(-2px);
+}
+
+.navigation button:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Centered Question Indicator */
+.navigation span {
+  flex: 1;
+  text-align: center;
+  font-weight: 500;
+  background: #e0e7ff;
+  padding: 6px 0;
+  border-radius: 14px;
+  font-size: 0.8rem;
+  color: #1e40af;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease-in-out;
 }

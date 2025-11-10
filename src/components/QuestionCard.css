@@ -32,7 +32,7 @@
   margin: 8px 0;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 13px;
   color: #333;
   border: 1px solid #dfe3eb;
   transition: all 0.3s ease;
@@ -71,12 +71,12 @@
   padding: 14px;
   border-radius: 10px;
   background: #f9fbff;
-  border-left: 5px solid #007bff;
+  border-left: 3px solid #007bff;
   text-align: left;
 }
 
 .answer {
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: 8px;
 }
 
@@ -94,7 +94,7 @@
   border-radius: 8px;
   color: #333;
   line-height: 1.4;
-  font-size: 15px;
+  font-size: 13px;
   margin-top: 6px;
 }
 
