@@ -177,7 +177,7 @@ button:disabled {
   font-weight: 600;
   border-radius: 16px;
   border: none;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77); /* dark blue gradient */
   color: white;
   font-size: 0.85rem;
   cursor: pointer;
@@ -186,12 +186,12 @@ button:disabled {
 }
 
 .navigation button:hover:not(:disabled) {
-  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  background: linear-gradient(135deg, #1b263b, #415a77, #0d1b2a); /* hover: slightly reversed gradient */
   transform: translateY(-2px);
 }
 
 .navigation button:disabled {
-  background: #a5b4fc;
+  background: #6b7b8c; /* muted dark blue for disabled */
   cursor: not-allowed;
   opacity: 0.7;
 }
@@ -205,7 +205,23 @@ button:disabled {
   padding: 6px 0;
   border-radius: 14px;
   font-size: 0.8rem;
-  color: #1e40af;
+  color: #050000;
+  background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   transition: all 0.2s ease-in-out;
+}
+
+.start-button {
+  background-color: #0b2d51; 
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.start-button:hover:not(:disabled) {
+  background-color: #1c3259;
 }

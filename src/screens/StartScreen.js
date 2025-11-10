@@ -55,7 +55,7 @@ function StartScreen({ topic, setTopic, setQuestions, setAnswers }) {
           ))}
         </select>
 
-        <button onClick={handleStartTest} disabled={loading}>
+        <button className="start-button" onClick={handleStartTest} disabled={loading}>
           {loading ? "Generating..." : "Start Test"}
         </button>
       </div>

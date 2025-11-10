@@ -25,7 +25,7 @@
 
 .option:hover {
   background: #ebf2ff;
-  border-color: #a4c8ff;
+  border-color: #0f213a;
 }
 
 .option.selected {
@@ -62,7 +62,7 @@
   padding: 14px;
   border-radius: 10px;
   background: #f9fbff;
-  border-left: 3px solid #007bff;
+  border-left: 3px solid #25578d;
   text-align: left;
 }
 
