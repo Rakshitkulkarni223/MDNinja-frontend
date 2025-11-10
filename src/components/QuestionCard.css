@@ -1,4 +1,4 @@
-.question-card {
+/* .question-card {
   background: #ffffff;
   padding: 22px;
   margin-bottom: 24px;
@@ -6,16 +6,16 @@
   border: 1px solid #e8e8e8;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
-}
+} */
 
-.question-card:hover {
+/* .question-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
+} */
 
 .question-text {
   color: #222;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.5;
   font-weight: 500;
 }
@@ -32,7 +32,7 @@
   margin: 8px 0;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 12px;
   color: #333;
   border: 1px solid #dfe3eb;
   transition: all 0.3s ease;

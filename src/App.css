@@ -1,28 +1,53 @@
-/* === App.css === */
-.app {
-  text-align: center;
-  font-family: "Inter", sans-serif;
-  padding: 20px;
+/* === General App Frame === */
+.app-frame {
+  width: 400px; /* fixed width like mobile */
+  max-width: 95vw;
+  height: 100vh; /* full viewport height */
+  margin: 0 auto;
   background: #f9fbfd;
-  min-height: 100vh;
+  border: 2px solid #cbd5e0;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  position: relative;
 }
 
-h1 {
-  font-size: 1.8rem;
-  color: #1a202c;
-  margin-bottom: 20px;
+/* === Screen content === */
+.screen {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  background: #ffffff;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
+/* === Header === */
+.header {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+/* === Input / dropdown === */
 .input-section {
-  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .dropdown {
-  padding: 10px 14px;
-  border-radius: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
   border: 1px solid #cbd5e0;
   font-size: 1rem;
-  margin-right: 10px;
   outline: none;
   transition: all 0.2s ease-in-out;
 }
@@ -35,12 +60,12 @@ h1 {
 button {
   background-color: #2563eb;
   color: white;
-  padding: 10px 16px;
+  padding: 12px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.2s ease-in-out;
 }
 
 button:hover:not(:disabled) {
@@ -48,74 +73,103 @@ button:hover:not(:disabled) {
 }
 
 button:disabled {
-  opacity: 0.5;
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
 .error {
   color: red;
-  font-weight: 500;
+  text-align: center;
   margin-top: 10px;
 }
 
-/* === Centered, Elegant Navigation === */
+/* === Test Container === */
+.quiz-container {
+  flex: 1;
+  background: #fff;
+  border-radius: 20px;
+  padding: 15px;
+  /* margin-top: 20px; */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+}
+
+/* === QuestionCard Options === */
+.option-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e0;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: all 0.2s ease-in-out;
+  background: #f9fafb;
+}
+
+.option-button.selected {
+  border-color: #2563eb;
+  background: #e0f2fe;
+}
+
+.option-button:hover {
+  background: #eef2ff;
+}
+
+/* === Navigation === */
 .navigation {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 30px auto;
-  gap: 15px;
+  gap: 10px;
+  margin-top: auto;
 }
 
 .navigation button {
-  background-color: #2563eb;
-  color: white;
+  flex: 1;
+  /* padding: 10px; */
   font-weight: 600;
-  padding: 10px 20px;
   border-radius: 12px;
   border: none;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease-in-out;
-}
-
-.navigation button:hover:not(:disabled) {
-  background-color: #1e40af;
-  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navigation span {
-  font-size: 1.05rem;
-  color: #1a202c;
+  flex: 1;
+  text-align: center;
+  font-weight: 500;
   background: #eef2ff;
-  padding: 8px 16px;
+  padding: 8px 0;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* === Quiz container === */
-.quiz-container {
-  background: #fff;
-  border-radius: 20px;
-  padding: 25px;
-  max-width: 800px;
-  margin: 0 auto;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
+/* === Summary Screen === */
 .summary {
-  background: #e0f2fe;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #d1fae5;
+  border-radius: 20px;
   padding: 20px;
-  border-radius: 12px;
-  max-width: 600px;
-  margin: 30px auto;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
-.correct-text {
-  color: #16a34a;
+.summary button {
+  margin-top: 20px;
 }
 
-.wrong-text {
-  color: #dc2626;
+/* === Scrollbar for inner screens === */
+.screen::-webkit-scrollbar {
+  width: 6px;
+}
+
+.screen::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
 }
